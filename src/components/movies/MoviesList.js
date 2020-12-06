@@ -17,7 +17,7 @@ const Container = styled.div`
 `
 
 const MoviesList = ({ movies }) => {
-  console.log("MoviesList", movies)
+
   return (
     <Container>
       {

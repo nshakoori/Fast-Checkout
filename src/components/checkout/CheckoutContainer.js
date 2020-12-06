@@ -25,7 +25,7 @@ class CheckoutContainer extends Component {
   render() {
     const { selectedMovies } = this.props
     const checkoutCart = this.getCheckoutCart(selectedMovies)
-    console.log("checkout", checkoutCart)
+  
     return (
       <Container>
         <MoviesList movies={checkoutCart}/>
