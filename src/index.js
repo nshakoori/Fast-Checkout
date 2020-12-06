@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import thunk from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux'
+import { CookiesProvider } from 'react-cookie'
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import rootReducer from './rootReducer';
+import HomeIndex from './components/home';
+import CheckoutContainer from './components/checkout/CheckoutContainer';
+import NavBar from './components/navBar/NavBar'
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <CookiesProvider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <div>
+          <NavBar />
+          <Switch>
+            <Route exact path='/' component={HomeIndex} />
+            <Route path='/checkout' component={CheckoutContainer} />
+          </Switch>
+        </div>
+      </Provider>
+    </BrowserRouter>
+  </CookiesProvider>,
   document.getElementById('root')
 );
 
