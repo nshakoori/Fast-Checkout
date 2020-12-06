@@ -1,12 +1,13 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import MoviesList from '../movies/MoviesList'
 import { getSelectedMovies } from '../movies/MoviesActions'
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 class CheckoutContainer extends Component {

@@ -1,6 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import MoviesList from './MoviesList'
 import Error from '../errors/Error'
@@ -29,11 +28,6 @@ const MoviesContainer = (props) => {
   ) 
 }
 
-// MoviesContainer.propTypes = {
-//   isFetching: PropTypes.bool,
-//   moviesArray: PropTypes.array.isRequired,
-//   error: PropTypes.string
-// }
 const mapStateToProps = ({ movies }) => {
   const { isFetching, moviesArray, moviesHash, error } = movies
   return { isFetching, moviesArray, moviesHash, error }

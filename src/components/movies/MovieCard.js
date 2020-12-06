@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import styled from 'styled-components'
 import { selectMovie, deselectMovie, getSelectedMovies } from './MoviesActions'
@@ -35,11 +34,6 @@ class MovieCard extends Component {
     )
   }
 }
-
-// MovieCard.propTypes = {
-//   title: PropTypes.string,
-//   poster: PropTypes.string
-// }
 
 const mapStateToProps = ({ movies }) => {
   const { selectedMovies } = movies
